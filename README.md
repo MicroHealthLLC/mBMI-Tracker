@@ -5,4 +5,6 @@ Floating action menu : edit weight/height
                        unit settings
                        bmi chart
                        
-TODO:=> track user bmi activities for chartview..
+TODO:=> track user bmi activities for chartview..[DONE]
+
+TODO:=> All components done. Ready for testing => :)
