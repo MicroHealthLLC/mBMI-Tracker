@@ -1,10 +1,2 @@
 # mBMI-Tracker
-BMI tracker : computes bmi, added a progress wheel to show risk level.
-Updated metric and imperial settings 
-Floating action menu : edit weight/height 
-                       unit settings
-                       bmi chart
-                       
-TODO:=> track user bmi activities for chartview..[DONE]
-
-TODO:=> All components done. Ready for testing => :)
+Body Mass Index Calculator application utilizes  a beautiful color progress wheel animation to display your body mass index and obese risk level. The application tracks your weight and Body Mass Index over time, and also makes your log history available for viewing at your convenience.This was built by Daniel Boakye as a project for my internship at Micro-Health.
