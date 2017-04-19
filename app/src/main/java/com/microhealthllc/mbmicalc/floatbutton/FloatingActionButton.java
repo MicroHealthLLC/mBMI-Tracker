@@ -36,7 +36,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.github.clans.fab.Label;
+
 
 public class FloatingActionButton extends ImageButton {
 
@@ -46,9 +46,9 @@ public class FloatingActionButton extends ImageButton {
     int mFabSize;
     boolean mShowShadow;
     int mShadowColor;
-    int mShadowRadius = com.github.clans.fab.Util.dpToPx(getContext(), 4f);
-    int mShadowXOffset = com.github.clans.fab.Util.dpToPx(getContext(), 1f);
-    int mShadowYOffset = com.github.clans.fab.Util.dpToPx(getContext(), 3f);
+    int mShadowRadius = Util.dpToPx(getContext(), 4f);
+    int mShadowXOffset = Util.dpToPx(getContext(), 1f);
+    int mShadowYOffset = Util.dpToPx(getContext(), 3f);
 
     private static final Xfermode PORTER_DUFF_CLEAR = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
     private static final long PAUSE_GROWING_TIME = 200;
@@ -60,7 +60,7 @@ public class FloatingActionButton extends ImageButton {
     private int mColorDisabled;
     private int mColorRipple;
     private Drawable mIcon;
-    private int mIconSize = com.github.clans.fab.Util.dpToPx(getContext(), 24f);
+    private int mIconSize = Util.dpToPx(getContext(), 24f);
     private Animation mShowAnimation;
     private Animation mHideAnimation;
     private String mLabelText;
@@ -71,7 +71,7 @@ public class FloatingActionButton extends ImageButton {
 
     // Progress
     private boolean mProgressBarEnabled;
-    private int mProgressWidth = com.github.clans.fab.Util.dpToPx(getContext(), 6f);
+    private int mProgressWidth = Util.dpToPx(getContext(), 6f);
     private int mProgressColor;
     private int mProgressBackgroundColor;
     private boolean mShouldUpdateButtonPosition;
@@ -404,7 +404,7 @@ public class FloatingActionButton extends ImageButton {
         drawable.addState(new int[]{android.R.attr.state_pressed}, createCircleDrawable(mColorPressed));
         drawable.addState(new int[]{}, createCircleDrawable(mColorNormal));
 
-        if (com.github.clans.fab.Util.hasLollipop()) {
+        if (Util.hasLollipop()) {
             RippleDrawable ripple = new RippleDrawable(new ColorStateList(new int[][]{{}},
                     new int[]{mColorRipple}), drawable, null);
             setOutlineProvider(new ViewOutlineProvider() {
@@ -431,7 +431,7 @@ public class FloatingActionButton extends ImageButton {
     @SuppressWarnings("deprecation")
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void setBackgroundCompat(Drawable drawable) {
-        if (com.github.clans.fab.Util.hasJellyBean()) {
+        if (Util.hasJellyBean()) {
             setBackground(drawable);
         } else {
             setBackgroundDrawable(drawable);
@@ -524,7 +524,7 @@ public class FloatingActionButton extends ImageButton {
         if (mBackgroundDrawable instanceof StateListDrawable) {
             StateListDrawable drawable = (StateListDrawable) mBackgroundDrawable;
             drawable.setState(new int[]{android.R.attr.state_enabled, android.R.attr.state_pressed});
-        } else if (com.github.clans.fab.Util.hasLollipop()) {
+        } else if (Util.hasLollipop()) {
             RippleDrawable ripple = (RippleDrawable) mBackgroundDrawable;
             ripple.setState(new int[]{android.R.attr.state_enabled, android.R.attr.state_pressed});
             ripple.setHotspot(calculateCenterX(), calculateCenterY());
@@ -537,7 +537,7 @@ public class FloatingActionButton extends ImageButton {
         if (mBackgroundDrawable instanceof StateListDrawable) {
             StateListDrawable drawable = (StateListDrawable) mBackgroundDrawable;
             drawable.setState(new int[]{android.R.attr.state_enabled});
-        } else if (com.github.clans.fab.Util.hasLollipop()) {
+        } else if (Util.hasLollipop()) {
             RippleDrawable ripple = (RippleDrawable) mBackgroundDrawable;
             ripple.setState(new int[]{android.R.attr.state_enabled});
             ripple.setHotspot(calculateCenterX(), calculateCenterY());
@@ -817,7 +817,7 @@ public class FloatingActionButton extends ImageButton {
                 @Override
                 public void onClick(View v) {
                     if (mClickListener != null) {
-                        mClickListener.onClick(com.github.clans.fab.FloatingActionButton.this);
+                        mClickListener.onClick(FloatingActionButton.this);
                     }
                 }
             });
@@ -938,7 +938,7 @@ public class FloatingActionButton extends ImageButton {
      * @param shadowRadiusDp shadow radius specified in density-independent (dp) pixels
      */
     public void setShadowRadius(float shadowRadiusDp) {
-        mShadowRadius = com.github.clans.fab.Util.dpToPx(getContext(), shadowRadiusDp);
+        mShadowRadius = Util.dpToPx(getContext(), shadowRadiusDp);
         requestLayout();
         updateBackground();
     }
@@ -970,7 +970,7 @@ public class FloatingActionButton extends ImageButton {
      * @param shadowXOffsetDp shadow radius specified in density-independent (dp) pixels
      */
     public void setShadowXOffset(float shadowXOffsetDp) {
-        mShadowXOffset = com.github.clans.fab.Util.dpToPx(getContext(), shadowXOffsetDp);
+        mShadowXOffset = Util.dpToPx(getContext(), shadowXOffsetDp);
         requestLayout();
         updateBackground();
     }
@@ -1002,7 +1002,7 @@ public class FloatingActionButton extends ImageButton {
      * @param shadowYOffsetDp shadow radius specified in density-independent (dp) pixels
      */
     public void setShadowYOffset(float shadowYOffsetDp) {
-        mShadowYOffset = com.github.clans.fab.Util.dpToPx(getContext(), shadowYOffsetDp);
+        mShadowYOffset = Util.dpToPx(getContext(), shadowYOffsetDp);
         requestLayout();
         updateBackground();
     }
@@ -1114,7 +1114,7 @@ public class FloatingActionButton extends ImageButton {
 
     @Override
     public void setElevation(float elevation) {
-        if (com.github.clans.fab.Util.hasLollipop() && elevation > 0) {
+        if (Util.hasLollipop() && elevation > 0) {
             super.setElevation(elevation);
             if (!isInEditMode()) {
                 mUsingElevation = true;
@@ -1137,7 +1137,7 @@ public class FloatingActionButton extends ImageButton {
         mShadowXOffset = 0;
         mShadowYOffset = Math.round(mFabSize == SIZE_NORMAL ? elevation : elevation / 2);
 
-        if (com.github.clans.fab.Util.hasLollipop()) {
+        if (Util.hasLollipop()) {
             super.setElevation(elevation);
             mUsingElevationCompat = true;
             mShowShadow = false;

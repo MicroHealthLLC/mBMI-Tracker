@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="sliding_title_lines">5</integer>
+
+    <integer name="sliding_space_layout_weight">1</integer>
+    <integer name="sliding_card_layout_weight">6</integer>
+</resources>

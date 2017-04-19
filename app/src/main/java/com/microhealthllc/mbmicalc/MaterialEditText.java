@@ -35,7 +35,7 @@ import android.view.View;
 import com.nineoldandroids.animation.ArgbEvaluator;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.rengwuxian.materialedittext.Colors;
-import com.rengwuxian.materialedittext.Density;
+
 import com.rengwuxian.materialedittext.validation.METLengthChecker;
 import com.rengwuxian.materialedittext.validation.METValidator;
 
@@ -1218,7 +1218,7 @@ public class MaterialEditText extends AppCompatEditText {
    * @param validator Validator to add
    * @return This instance, for easy chaining
    */
-  public com.rengwuxian.materialedittext.MaterialEditText addValidator(METValidator validator) {
+  public MaterialEditText addValidator(METValidator validator) {
     if (validators == null) {
       this.validators = new ArrayList<>();
     }

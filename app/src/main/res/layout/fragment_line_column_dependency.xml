@@ -1,33 +1,336 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:flatui="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/main.appbar"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            app:title="BMI calculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            style="@style/SizeSpecificCollapsingToolbarLayout"
+            app:expandedTitleMarginStart="10dp"
+
+            app:expandedTitleMarginEnd="20dp">
+
+            <LinearLayout
+                android:id="@+id/editlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?colorPrimary"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="16dp">
+
+
+
+                <TextView
+                    android:id="@+id/displayname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="George"
+                    android:textSize="54sp"
+                    android:textColor="#fff"
+
+
+                    />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/slimChart"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:tint="@color/primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/circle"
+                        android:id="@+id/imageView3" />
+
+                    <TextView
+                        android:text="height:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"
+                        android:textColor="@android:color/white"
+                        android:alpha=".5"
+                        android:layout_marginLeft="6dp" />
+
+                    <TextView
+                        android:text="18"
+                        android:id="@+id/display_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textStyle="normal|bold"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="4dp" />
+
+                    <ImageView
+                        android:tint="@color/primaryl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/circle"
+                        android:id="@+id/imageView2" />
+
+                    <TextView
+                        android:text="weight:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3"
+                        android:textColor="@android:color/white"
+                        android:alpha=".5"
+                        android:layout_marginLeft="6dp" />
+
+                    <TextView
+                        android:text="91"
+                        android:id="@+id/display_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textStyle="normal|bold"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="4dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tint="@color/accentl"
+                        app:srcCompat="@drawable/circle"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/slimChart"
+                        android:layout_toEndOf="@+id/slimChart"
+                        android:id="@+id/imageView" />
+
+                    <TextView
+                        android:text="BMI:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2"
+                        android:textColor="@android:color/white"
+                        android:alpha=".5"
+                        android:layout_marginLeft="6dp" />
+
+                    <TextView
+                        android:text="621"
+                        android:id="@+id/display_bmi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textStyle="normal|bold"
+                        android:layout_marginLeft="4dp" />
+
+
+
+
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+<LinearLayout
+    android:layout_width="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="lecho.lib.hellocharts.samples.PreviewLineChartActivity$PlaceholderFragment" >
+    android:layout_height="wrap_content">
 
-    <lecho.lib.hellocharts.view.LineChartView
-        android:id="@+id/chart_top"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </lecho.lib.hellocharts.view.LineChartView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray" />
+            <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:layout_marginLeft="@dimen/card_margin"
+            android:layout_marginRight="@dimen/card_margin">
 
-    <lecho.lib.hellocharts.view.ColumnChartView
-        android:id="@+id/chart_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </lecho.lib.hellocharts.view.ColumnChartView>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BMI"
+                        android:textSize="18dp"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+                <lecho.lib.hellocharts.view.LineChartView
+                    android:id="@+id/chart_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+                </lecho.lib.hellocharts.view.LineChartView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFF"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dip"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weight"
+                            android:textSize="18dp"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                    <lecho.lib.hellocharts.view.LineChartView
+                        android:id="@+id/chart_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        >
+                    </lecho.lib.hellocharts.view.LineChartView>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+
+
 
 </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|right|end"
+        android:layout_height="wrap_content">
+
+        <com.microhealthllc.mbmicalc.floatbutton.FloatingActionMenu
+            android:layout_height="wrap_content"
+            android:id="@+id/fabdown"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/ic_action_navigation_check"
+            app:layout_anchor="@id/main.appbar"
+            app:backgroundTint="@color/accent"
+            fab:menu_colorNormal="@color/accent"
+            app:layout_anchorGravity="bottom|right|end">
+
+            <com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton
+                android:id="@+id/enter_edit_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit"
+                fab:menu_colorNormal="@color/accent"
+                style="@style/MenuButtonsStyle"
+                app:fabSize="mini"
+                fab:fab_label="enter/edit data" />
+
+
+            <com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton
+                android:id="@+id/bmi_logs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/accent"
+                fab:menu_colorNormal="@color/accent"
+                android:src="@drawable/ic_action_action_history"
+                app:fabSize="mini"
+                style="@style/MenuButtonsStyle"
+                fab:fab_label="log history" />
+            <com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_action_home"
+                fab:menu_colorNormal="@color/accent"
+                style="@style/MenuButtonsStyle"
+                app:fabSize="mini"
+                fab:fab_label="home" />
+
+            <com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_action_delete"
+                fab:menu_colorNormal="@color/accent"
+                style="@style/MenuButtonsStyle"
+                app:fabSize="mini"
+                fab:fab_label="delete " />
+
+
+
+        </com.microhealthllc.mbmicalc.floatbutton.FloatingActionMenu>
+
+    </LinearLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

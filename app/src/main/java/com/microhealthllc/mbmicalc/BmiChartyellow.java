@@ -30,29 +30,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
-import android.text.TextUtils;
-
 import android.transition.Slide;
 import android.util.Log;
 import android.view.Gravity;
@@ -60,63 +46,44 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.cengalabs.flatui.views.FlatEditText;
-
+import com.microhealthllc.About;
 import com.microhealthllc.mbmicalc.DB.BmiLogs;
 import com.microhealthllc.mbmicalc.DB.DBHandler;
-import com.microhealthllc.mbmicalc.R;
 import com.microhealthllc.mbmicalc.chart.ColorArcProgressBar;
-import com.microhealthllc.mbmicalc.chart.FitChart;
-import com.microhealthllc.mbmicalc.chart.FitChartValue;
 import com.microhealthllc.mbmicalc.chart.LineColumnDependencyActivity;
 import com.microhealthllc.mbmicalc.chart.SimpleLineChart;
 import com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton;
 import com.microhealthllc.mbmicalc.floatbutton.FloatingActionMenu;
-import com.microhealthllc.mbmicalc.BasicSettings;
-import com.rengwuxian.materialedittext.MaterialEditText;
 import com.yarolegovich.lovelydialog.LovelyStandardDialog;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import butterknife.Bind;
-import lecho.lib.hellocharts.gesture.ZoomType;
-import lecho.lib.hellocharts.model.Axis;
-import lecho.lib.hellocharts.model.AxisValue;
 import lecho.lib.hellocharts.model.ColumnChartData;
-import lecho.lib.hellocharts.model.Line;
 import lecho.lib.hellocharts.model.LineChartData;
-import lecho.lib.hellocharts.model.PointValue;
-import lecho.lib.hellocharts.model.Viewport;
-import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.ColumnChartView;
 import lecho.lib.hellocharts.view.LineChartView;
 
 
-public class BmiChart extends AppCompatActivity {
+public class BmiChartyellow extends AppCompatActivity {
 
     private FloatingActionMenu menumainred;
     private FloatingActionButton enteredit_fab;
     private FloatingActionButton weight_graphfab;
     private FloatingActionButton bmi_logsfab;
+    private FloatingActionButton bmi_info;
+
 
     private List<LogModel> logList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -167,7 +134,7 @@ public class BmiChart extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bmichart);
+        setContentView(R.layout.bmichartyellow);
 
         bar1 = (ColorArcProgressBar) findViewById(R.id.bar1);
         menumainred = (FloatingActionMenu) findViewById(R.id.menu_red);
@@ -182,6 +149,7 @@ public class BmiChart extends AppCompatActivity {
         enteredit_fab = (FloatingActionButton) findViewById(R.id.enter_edit_data);
         weight_graphfab = (FloatingActionButton) findViewById(R.id.bmi_graph);
         bmi_logsfab =(FloatingActionButton) findViewById(R.id.bmi_logs);
+        bmi_info = (FloatingActionButton) findViewById(R.id.bmi_info) ;
         lastactivty = (TextView) findViewById(R.id.last_activity);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
      //   unit_settingsfab = (FloatingActionButton) findViewById(R.id.unitsettings);
@@ -197,7 +165,7 @@ public class BmiChart extends AppCompatActivity {
 
         }
      //   ab.setDisplayHomeAsUpEnabled(true);
-        setupWindowAnimations();
+
         setUpNavigationDrawer();
 
         mAdapter = new LogListAdapter(logList);
@@ -206,7 +174,6 @@ public class BmiChart extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setAdapter(mAdapter);
-
 
         // *** TOP LINE CHART ***
      //   chartTop = (LineChartView) findViewById(R.id.chart_top);
@@ -220,7 +187,7 @@ public class BmiChart extends AppCompatActivity {
         viewmore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(BmiChart.this, LogActivity.class);
+                Intent i = new Intent(BmiChartyellow.this, LogActivity.class);
                 startActivity(i);
             }
         });
@@ -253,6 +220,7 @@ public class BmiChart extends AppCompatActivity {
          enteredit_fab.setOnClickListener(clickListener);
          weight_graphfab.setOnClickListener(clickListener);
          bmi_logsfab.setOnClickListener(clickListener);
+         bmi_info.setOnClickListener(clickListener);
 
          //  unit_settingsfab.setOnClickListener(clickListener);
 
@@ -263,14 +231,7 @@ public class BmiChart extends AppCompatActivity {
 
 
     }
-    private void setupWindowAnimations() {
-        // Re-enter transition is executed when returning to this activity
-        Slide slideTransition = new Slide();
-        slideTransition.setSlideEdge(Gravity.LEFT);
-        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_long));
-        getWindow().setReenterTransition(slideTransition);
-        getWindow().setExitTransition(slideTransition);
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -363,7 +324,7 @@ public class BmiChart extends AppCompatActivity {
              if(db.getLast().getDateTime()==null){
 
                  db.addLog(new BmiLogs(String.format("%.1f", bmi), String.format("%.0f", weight), getDateTime()));
-                 lastactivty.setText("last activity : "+getDateTimeforLastActivity());
+                 lastactivty.setText(""+getDateTimeforLastActivity());
                  editor.putString(getString(R.string.last_activity),getDateTimeforLastActivity());
                  editor.apply();
              }
@@ -371,7 +332,7 @@ public class BmiChart extends AppCompatActivity {
                 {
                     Log.i("Equals",""+db.getLast().getDateTime().equals(getDateTime()));
                     db.updateLastEntry(db.getLast().getId(),String.format("%.1f", bmi), String.format("%.0f", weight),getDateTime());
-                    lastactivty.setText("last activity : "+getDateTimeforLastActivity());
+                    lastactivty.setText(""+getDateTimeforLastActivity());
                     editor.putString(getString(R.string.last_activity),getDateTimeforLastActivity());
                     editor.apply();
 
@@ -379,7 +340,7 @@ public class BmiChart extends AppCompatActivity {
                 }
                 else {
                     db.addLog(new BmiLogs(String.format("%.1f", bmi), String.format("%.0f", weight), getDateTime()));
-                    lastactivty.setText("last activity : "+getDateTimeforLastActivity());
+                    lastactivty.setText(""+getDateTimeforLastActivity());
                     editor.putString(getString(R.string.last_activity),getDateTimeforLastActivity());
                     editor.apply();
                 }
@@ -426,14 +387,14 @@ public class BmiChart extends AppCompatActivity {
                     metrics = SP.getInt(getString(R.string.metric_settings),0);
 
 
-                  Intent i = new Intent(BmiChart.this, BasicSettings.class);
+                  Intent i = new Intent(BmiChartyellow.this, BasicSettings.class);
                   startActivity(i);
 
               }
                     break;
                 case R.id.bmi_graph:
 
-                    Intent i = new Intent(BmiChart.this, LineColumnDependencyActivity.class);
+                    Intent i = new Intent(BmiChartyellow.this, LineColumnDependencyActivity.class);
                     startActivity(i);
 
                     break;
@@ -446,7 +407,7 @@ public class BmiChart extends AppCompatActivity {
 
                     break;*/
                 case R.id.bmi_logs :
-                    Intent it = new Intent(BmiChart.this, LogActivity.class);
+                    Intent it = new Intent(BmiChartyellow.this, LogActivity.class);
                     startActivity(it);
 
             }
@@ -471,11 +432,12 @@ public class BmiChart extends AppCompatActivity {
                 return bmiresults ;
             }
             else {
-                double weightindex = weight * 0.45;
-                double heightindex = height * 0.025;
+             //   double weightindex = weight * 0.45;
+             //   double heightindex = height * 0.025;
                 Log.i("metric", metric+"");
-                Log.i("weightindex heightIndex", weightindex + "," + heightindex);
-                bmiresults = (weightindex) / (heightindex * heightindex);
+                Log.i("weightindex heightIndex", weight + "," + height);
+                bmiresults = ((weight) / (height * height))*703;
+                Log.i("bmiresults", bmiresults+"");
                 return bmiresults ;
             }
         }
@@ -542,18 +504,18 @@ public class BmiChart extends AppCompatActivity {
                         break;
                     case R.id.navigation_item_2:
                       //  mCurrentSelectedPosition = 1;
-                        Intent i = new Intent(BmiChart.this, BasicSettings.class);
+                        Intent i = new Intent(BmiChartyellow.this, BasicSettings.class);
                         startActivity(i);
 
                         break;
                     case R.id.navigation_item_3:
                     //    mCurrentSelectedPosition = 2;
-                        Intent j = new Intent(BmiChart.this, LogActivity.class);
+                        Intent j = new Intent(BmiChartyellow.this, LogActivity.class);
                         startActivity(j);
                         break;
                     case R.id.navigation_item_4:
                      //   mCurrentSelectedPosition = 3;
-                        new LovelyStandardDialog(BmiChart.this)
+                        new LovelyStandardDialog(BmiChartyellow.this)
                                 .setTopColorRes(R.color.accent)
                                 .setButtonsColorRes(R.color.accent)
 
@@ -562,9 +524,9 @@ public class BmiChart extends AppCompatActivity {
                                 .setPositiveButton(android.R.string.ok, new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Toast.makeText(BmiChart.this, "positive clicked", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(BmiChartyellow.this, "positive clicked", Toast.LENGTH_SHORT).show();
 
-                                        Intent i = new Intent(BmiChart.this, BmiChart.class);
+                                        Intent i = new Intent(BmiChartyellow.this, BmiChartyellow.class);
                                         startActivity(i);
                                     }
                                 })
@@ -574,11 +536,16 @@ public class BmiChart extends AppCompatActivity {
 
                         break;
                     case R.id.navigation_item_5:
+                        Intent about = new Intent (BmiChartyellow.this, About.class);
+                        startActivity(about);
 
                         break;
                     case R.id.navigation_item_6:
-                        Intent js = new Intent(BmiChart.this, LineColumnDependencyActivity.class);
+                        Intent js = new Intent(BmiChartyellow.this, LineColumnDependencyActivity.class);
                         startActivity(js);
+                        break;
+                    case R.id.bmi_info:
+                        startActivity(new Intent(BmiChartyellow.this, AdditionalBMIinfo.class));
 
                 }
 
@@ -629,7 +596,7 @@ public class BmiChart extends AppCompatActivity {
            // for (BmiLogs log : logs) {
            //     loghistory = new LogModel(log.getBmi(), log.getWeight(), log.getDateTime());
 //
-               for (int i=0;i<2; i++){
+               for (int i=logs.size()-1;i>logs.size()-3; i--){
                    loghistory = new LogModel(logs.get(i).getBmi(), logs.get(i).getWeight(), logs.get(i).getDateTime());
                    logList.add(loghistory);
                }

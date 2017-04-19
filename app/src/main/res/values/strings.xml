@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese">Obese</string>
+    <string name="ok_bro">ok bro</string>
+    <string name="height_metric">Height (m)</string>
+    <string name="weight_metric">Weight (kg)</string>
+    <string name="height_imp_us">Height (in)</string>
+    <string name="weight_imp_us">Weight (pound)</string>
+    <string name="name">Name (Optional)</string>
+    <string name="result">Result:</string>
+    <string name="error_enter_valid">Please enter valid height/weight</string>
+    <string name="error_less_than_zero">height / weight cannot be less or equal to 0 bro</string>
+    <string name="unit">kg/m</string>
+    <string name="preference_file_key">com.microhealthllc.mbmicalc.MetricSettings</string>
+    <string name="metric_settings">metric_settings</string>
+    <string name="updates"> </string>
+
+    <string name="copy_right">2017 All rights ©  reserved</string>
+    <string name="metric_height">metric_height</string>
+    <string name="metric_weight">metric_weight</string>
+    <string name="metric_user_name">user_name</string>
+    <string name="metric_inches">inches</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="display_height">display_height</string>
+    <string name="display_weight">display_weight</string>
+    <string name="display_bmi">display_bmi</string>
+    <string name="display_note">display_note</string>
+    <string name="last_activity">last_activity</string>
+
+    <string name="subtitle">Subtitle</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="menu_title">Menu Title</string>
+    <string name="page">Page</string>
+    <string name="greater"> >18.5</string>
+    <string name="eula">End User License Agreement</string>
+    <string name="agreement"><b>"Software"</b> means Bmi Tracker, and any other downloadable software offered from time to time by Microhealth.\n<p></p> <b>"User"</b> refers to a person or entity that has downloaded the Software.\n<p></p> <b>DISCLAIMER OF WARRANTIES</b> You acknowledge that the Software provided may contain Bugs and errors. The  software provided to you "As IS" at your own risk. To the extent legally permitted under the applicable LAW, MICROHEALTH DISCLAIMS ALL WARRANTIES, whether express, implied or statutory, including without limitation,any implied warranties of title, no -infringement of third party rights, merchantability or fitness for a particular purpose. \n <b> LIMITATION OF LIABILITY.</b> You agree that to the extent legally  permitted under the applicable law, MICROHEALTH SHALL NOT BE RESPONSIBLE FOR ANY LOSS OR DAMAGE TO YOU, YOUR CUSTOMERS OR THIRD PARTIES CAUSED BY FAILURE OF THE SOFTWARE TO FUNCTION.</string>
+    <string name="settings">Settings</string>
+    <string name="terms_condition">This app was developed by Microhealth Llc.By using this app,the terms and conditions below will automatically apply to you – Please read them  before using the app </string>
+    <string name="microhealthllctwitterpage"><a href="https://twitter.com/MicroHealthTalk">@microhealth</a></string>
+    <string name="article_detail_more_info">Risk Factors for Health Topics Associated With Obesity</string>
+    <string name="selectunits">Select Units</string>
+    <string name="ok">ok</string>
+    <string-array name="metricoptions">
+        <item><i>US Units height(ft) weight(lbs)</i></item>
+        <item><i>Metric Units height:(cm) weight(kg)</i></item>
+    </string-array>
+
+    <string name="samples_title">Hello title</string>
+    <string name="samples_subhead">Hello Subhead</string>
+    <string name="samples_hint_username">Username</string>
+    <string name="samples_hint_email">E-Mail</string>
+
+
+    <string name="navigation_title">My navigation title</string>
+    <string name="navigation_quotes">Quotes</string>
+    <string name="navigation_samples">Samples</string>
+    <string name="navigation_settings">Settings</string>
+    <string name="navigation_sub_items">Sub items</string>
+    <string name="navigation_dummy_item_1">Dummy item 1</string>
+    <string name="navigation_dummy_item_2">Dummy item 2</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_basic_settings">BMI Tracker</string>
+    <string name="title_activity_test_card">TestCard</string>
+
+    <!-- Strings related to Settings -->
+
+    <string name="sliding_transparent_view_description">Click to return to previous screen</string>
+    <!-- Example settings for Notifications -->
+    <string-array name="units_array">
+        <item>Imperial: inches and lbs </item>
+        <item>Metric: meters and kilograms </item>
+
+    </string-array>
+    <string name="title_activity_additional_bmiinfo">AdditionalBMIinfo</string>
+
+    <string name="use_expansion_animation">Use Expansion Animation</string>
+    <string name="show_normal_sliding_activity">Show Normal Sliding Activity</string>
+    <string name="show_normal_sliding_activity_fullscreen">Show Normal Sliding Activity (Fullscreen)</string>
+    <string name="show_menu_item_activity">Show Menu Item Sliding Activity</string>
+    <string name="show_image_activity">Show Image Sliding Activity</string>
+    <string name="show_dark_activity">Show Dark Sliding Activity</string>
+    <string name="show_fab_activity">Show FAB Sliding Activity</string>
+    <string name="show_no_header_activity">Show No Header Sliding Activity</string>
+    <string name="show_custom_header_activity">Show Custom Header Sliding Activity</string>
+    <string name="show_talon_activity">Show Talon for Twitter Example</string>
+
+    <string name="bug">Bug Report</string>
+
+    <string name="placeholder">Along with being overweight or obese, the following conditions will put you at greater risk for <i>heart disease and other conditions</i>\n\n\
+        <b>Risk Factors</b>\n\n
+        High blood pressure (hypertension)\n High LDL cholesterol ("bad" cholesterol)\nLow HDL cholesterol ("good" cholesterol)\nHigh triglyceridesHigh blood glucose (sugar)\nFamily history of premature heart disease\n\ Physical inactivity\n\ Cigarette smoking\n\n
+       For people who are considered obese (BMI greater than or equal to 30) or those who are <b>overweight (BMI of 25 to 29.9) and have two or more risk factors</b>, it is recommended that you lose weight.\n\n Even a small weight loss (between 5 and 10 percent of your current weight) will help lower your risk of developing diseases associated with obesity. People who are overweight, do not have a high waist measurement, and have fewer than two risk factors may need to prevent further weight gain rather than lose weight.\n\n
+       Talk to your doctor to see whether you are at an increased risk and whether you should lose weight. Your doctor will evaluate your BMI, waist measurement, and other risk factors for heart disease.
+The good news is even a small weight loss (between 5 and 10 percent of your current weight) will help lower your risk of developing those diseases.\n\n\
+
+
+    </string>
+    <string name="source">Source: https://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm#limitations</string>
+    <string name="normal_sliding_activity">Normal Sliding Activity</string>
+    <string name="custom_sliding_activity">Custom Header Activitiy</string>
+    <string name="submit_feedback">Submit Feedback</string>
+    <string name="image_activity">Image Activity</string>
+    <string name="dark_activity">Dark Activity</string>
+    <string name="fab_activity">FAB Activity</string>
+    <string name="talon_activity">Jacob Klinker</string>
+
+</resources>

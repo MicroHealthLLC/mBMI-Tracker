@@ -1,4 +1,4 @@
-package com;
+package com.microhealthllc.mbmicalc;
 
 /**
  * Created by dan on 3/20/17.

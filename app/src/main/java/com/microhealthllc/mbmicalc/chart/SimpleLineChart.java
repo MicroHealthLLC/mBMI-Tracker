@@ -1,4 +1,4 @@
-package com.wingsofts.simplelinechart;
+package com.microhealthllc.mbmicalc.chart;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -37,6 +37,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
+import com.microhealthllc.mbmicalc.R;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

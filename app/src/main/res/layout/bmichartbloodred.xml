@@ -215,7 +215,7 @@
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/bar1"
                 app:is_need_content="true"
-                app:front_color1="@color/primarylime"
+                app:front_color1="@color/bloodred"
                 app:max_value="100"
                 app:current_value="40.5"
                 app:back_width="10dp"
@@ -226,7 +226,7 @@
                 app:back_color="@android:color/darker_gray"
                 android:layout_marginBottom="100dp"
 
-                app:front_color2="@color/primarylime"
+                app:front_color2="@color/bloodred"
                 app:front_color3="@color/yellow"
                 />
 
@@ -315,6 +315,17 @@
             fab:fab_label="Activity Monitor" />
 
         <com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton
+            android:id="@+id/bmi_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/accent"
+            fab:menu_colorNormal="@color/accent"
+            android:src="@drawable/ic_action_action_info_outline"
+            app:fabSize="mini"
+            style="@style/MenuButtonsStyle"
+            fab:fab_label="BMI info" />
+
+        <com.microhealthllc.mbmicalc.floatbutton.FloatingActionButton
             android:id="@+id/bmi_logs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -366,11 +377,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
+            android:paddingLeft="2dp"
+
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
+            <TextView
+                android:text="UnderWeight:"
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/unde"
+                android:textColor="#757575"
+                android:alpha=".5"
+                android:layout_marginLeft="6dp" />
+
+            <TextView
+                android:text="@string/greater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primaryyell"
+                android:textStyle="normal|bold"
+                android:paddingRight="5dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp" />
 
             <TextView
                 android:text="Normal:"
@@ -379,7 +410,7 @@
                 android:id="@+id/texs3"
                 android:textColor="#757575"
                 android:alpha=".5"
-                android:layout_marginLeft="6dp" />
+                android:layout_marginLeft="2dp" />
 
             <TextView
                 android:text="18.5-25"
@@ -389,6 +420,16 @@
                 android:textStyle="normal|bold"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
 
 
             <TextView
@@ -410,14 +451,6 @@
                 android:paddingRight="5dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
-
 
 
             <TextView
@@ -437,9 +470,13 @@
                 android:textStyle="normal|bold"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp" />
+        </LinearLayout>
 
-
-
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:text="Obese II:"
@@ -458,13 +495,6 @@
                 android:textStyle="normal|bold"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp"
-            android:orientation="horizontal">
 
 
             <TextView
@@ -484,7 +514,7 @@
                 android:textStyle="normal|bold"
                 android:layout_marginLeft="4dp" />
         </LinearLayout>
-            </LinearLayout>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

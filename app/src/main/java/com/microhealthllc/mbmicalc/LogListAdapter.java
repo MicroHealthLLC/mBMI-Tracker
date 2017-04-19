@@ -1,12 +1,10 @@
-package com;
+package com.microhealthllc.mbmicalc;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.microhealthllc.mbmicalc.R;
 
 import java.util.List;
 
@@ -24,9 +22,9 @@ public class LogListAdapter extends RecyclerView.Adapter<LogListAdapter.MyViewHo
 
         public MyViewHolder(View view) {
             super(view);
-            bmi = (TextView) view.findViewById(R.id.bmi);
-            weight = (TextView) view.findViewById(R.id.weight);
-            datetime = (TextView) view.findViewById(R.id.datetime);
+            bmi = (TextView) view.findViewById(R.id.bmi_text);
+            weight = (TextView) view.findViewById(R.id.weight_txt);
+            datetime = (TextView) view.findViewById(R.id.date_text);
         }
     }
 
@@ -38,7 +36,7 @@ public class LogListAdapter extends RecyclerView.Adapter<LogListAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.loglistrow, parent, false);
+                .inflate(R.layout.listone, parent, false);
 
         return new MyViewHolder(itemView);
     }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.microhealthllc.mbmicalc">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/launchs"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Main">
+        <activity android:name=".BmiChart" />
+        <activity android:name=".LogActivity" />
+        <activity android:name=".BmiChartBloodRed" />
+        <activity android:name=".BmiChartOrange" />
+        <activity android:name=".BmiChartRed" />
+        <activity android:name=".BmiChartyellow" />
+        <activity android:name=".EnterBMIINfo" />
+        <activity android:name="com.microhealthllc.About" />
+        <activity android:name=".EnterBMIINfo_kgm" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".BasicSettings"
+            android:label="@string/title_activity_basic_settings"
+            android:theme="@style/NoActionBar"></activity>
+        <activity
+            android:name=".TestCard"
+            android:label="@string/title_activity_test_card"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".Chart" />
+        <activity android:name=".chart.LineColumnDependencyActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdditionalBMIinfo"
+            android:label="@string/title_activity_additional_bmiinfo"
+            android:theme="@style/Theme.Main.NoActionBar"></activity>
+    </application>
+
+</manifest>

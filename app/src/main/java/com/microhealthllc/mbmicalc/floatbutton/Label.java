@@ -26,7 +26,7 @@ import android.view.ViewOutlineProvider;
 import android.view.animation.Animation;
 import android.widget.TextView;
 
-import com.github.clans.fab.FloatingActionButton;
+
 
 public class Label extends TextView {
 

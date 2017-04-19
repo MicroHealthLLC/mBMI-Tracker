@@ -18,6 +18,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
+import com.microhealthllc.mbmicalc.R;
+
 public class SlimChart extends View {
     private static final float DEFAULT_SIZE = 100;
     private static final float FULL_CIRCLE_ANGLE = 360f;
