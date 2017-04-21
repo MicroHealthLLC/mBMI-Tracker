@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.fenchtose.tooltip.TooltipAnimation;
 import com.microhealthllc.About;
+import com.microhealthllc.mbmicalc.AdditionalBMIinfo;
 import com.microhealthllc.mbmicalc.BasicSettings;
 import com.microhealthllc.mbmicalc.BmiChart;
 import com.microhealthllc.mbmicalc.BmiChartBloodRed;
@@ -697,6 +698,9 @@ public class LineColumnDependencyActivity extends ActionBarActivity {
                     case R.id.navigation_item_6:
                         Intent js = new Intent(LineColumnDependencyActivity.this, LineColumnDependencyActivity.class);
                         startActivity(js);
+
+                    case R.id.bmi_info:
+                        startActivity(new Intent(LineColumnDependencyActivity.this, AdditionalBMIinfo.class));
 
 
 

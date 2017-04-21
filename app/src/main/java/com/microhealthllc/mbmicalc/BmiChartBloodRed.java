@@ -408,6 +408,9 @@ public class BmiChartBloodRed extends AppCompatActivity {
                 case R.id.bmi_logs :
                     Intent it = new Intent(BmiChartBloodRed.this, LogActivity.class);
                     startActivity(it);
+                    break;
+                case R.id.bmi_info:
+                    startActivity(new Intent(BmiChartBloodRed.this, AdditionalBMIinfo.class));
 
             }
         }

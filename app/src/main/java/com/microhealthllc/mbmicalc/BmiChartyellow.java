@@ -410,6 +410,12 @@ public class BmiChartyellow extends AppCompatActivity {
                     Intent it = new Intent(BmiChartyellow.this, LogActivity.class);
                     startActivity(it);
 
+
+                    break;
+
+                case R.id.bmi_info:
+                    startActivity(new Intent(BmiChartyellow.this, AdditionalBMIinfo.class));
+
             }
         }
     };

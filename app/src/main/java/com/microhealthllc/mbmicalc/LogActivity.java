@@ -292,6 +292,9 @@ public class LogActivity extends AppCompatActivity {
                         Intent js = new Intent(LogActivity.this, LineColumnDependencyActivity.class);
                         startActivity(js);
 
+                    case R.id.bmi_info:
+                        startActivity(new Intent(LogActivity.this, AdditionalBMIinfo.class));
+
                 }
 
                 // setTabs(mCurrentSelectedPosition + 1);

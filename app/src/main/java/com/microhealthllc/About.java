@@ -28,8 +28,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.microhealthllc.mbmicalc.AdditionalBMIinfo;
 import com.microhealthllc.mbmicalc.BasicSettings;
 import com.microhealthllc.mbmicalc.BmiChart;
+import com.microhealthllc.mbmicalc.BmiChartBloodRed;
 import com.microhealthllc.mbmicalc.BmiChartRed;
 import com.microhealthllc.mbmicalc.DB.DBHandler;
 import com.microhealthllc.mbmicalc.LogActivity;
@@ -262,6 +264,10 @@ public class About  extends AppCompatActivity {
                     case R.id.navigation_item_6:
                         Intent js = new Intent(About.this, LineColumnDependencyActivity.class);
                         startActivity(js);
+                                break;
+
+                    case R.id.bmi_info:
+                        startActivity(new Intent(About.this, AdditionalBMIinfo.class));
 
                 }
 
